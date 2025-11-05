@@ -203,17 +203,17 @@ const ContactUs = () => {
             {
               icon: "📍",
               title: "Our Address",
-              text: "B-15 Subhash Nagar, Bhopal - 462001",
+              text: "A-45 Shivaji Nagar, Bhopal – 462003",
             },
             {
               icon: "✉️",
               title: "Email Us",
-              text: "info@smsgc.in",
+              text: "capitalstock.in",
             },
             {
               icon: "📞",
               title: "Call Us",
-              text: "8962315503",
+              text: "8352345303",
             },
           ].map((item, i) => (
             <div key={i} className="col-md-4 col-sm-6 mb-4">

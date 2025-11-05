@@ -27,8 +27,8 @@ const ReferModal = ({ show, handleClose }) => {
       </Modal.Header>
       <Modal.Body>
         <p style={{ fontSize: "0.9rem", lineHeight: "1.5" }}>
-          1. Grow Capital referral program is for users who have already
-          invested through Grow Capital. <br />
+          1.   Prime Capital referral program is for users who have already
+          invested through    Prime Capital. <br />
           * Just complete the form to refer a friend. <br />
           * After the referral, your 20% sharing will be reduced to 10%. <br />
           * Once your friend starts working with us, your payout percentage will

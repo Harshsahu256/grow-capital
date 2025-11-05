@@ -42,3 +42,22 @@ export const getAllBankAccounts = async () => {
   }
 };
 
+
+export const getUserPositions = async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const response = await axios.get(
+
+      (API_ENDPOINT.GET_ACCOUNTS), {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return response.data.positions || [];
+  } catch (error) {
+    console.error("Error fetching user positions:", error.response?.data || error.message);
+    return [];
+  }
+};

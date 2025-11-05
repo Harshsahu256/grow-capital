@@ -417,7 +417,7 @@ const About = () => {
           <ul className="fs-6 about-text list-unstyled">
             <Fade direction="up" triggerOnce delay={100}>
               <li className="mb-3">
-                Grow Capital is an Investment Advisory Company providing
+                  Prime Capital is an Investment Advisory Company providing
                 recommendations for Stocks—Cash and F&O traded in NSE & BSE,
                 commodities including bullions, metals, and agro-commodities
                 traded in MCX, NCDEX.

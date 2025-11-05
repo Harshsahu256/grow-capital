@@ -374,7 +374,7 @@ const DepositPage = () => {
             marginBottom: "25px",
           }}
         >
-          GROW CAPITAL 💹
+           PRIME CAPITAL 💹
         </h1>
 
         <p style={{ color: "#555", fontSize: "18px", marginBottom: "30px" }}>

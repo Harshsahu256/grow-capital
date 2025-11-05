@@ -279,7 +279,7 @@ const Account = () => {
             letterSpacing: "0.5px",
           }}
         >
-          Grow Capital’S BENEFIT
+            Prime Capital’S BENEFIT
         </h4>
       </div>
 

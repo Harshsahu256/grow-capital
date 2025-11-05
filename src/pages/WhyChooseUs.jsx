@@ -123,33 +123,33 @@ const WhyChooseUs = () => {
     {
       img: "https://cdn-icons-png.flaticon.com/512/1828/1828640.png",
       title: "Quality",
-      text: "Quality is the major strength of Grow Capital. We are committed to providing high-quality trading insights and trusted guidance to our clients.",
+      text: "At InvestInvest Mart Research, we focus on maintaining high standards by delivering accurate and reliable trading guidance to our clients.",
     },
     {
       img: "https://cdn-icons-png.flaticon.com/512/3523/3523063.png",
       title: "Customized Service",
-      text: "We help you stay updated with the latest market movements through personalized reports and expert analysis designed for your investment goals.",
+      text: "Our reports keep you informed about market updates, helping you take advantage of market movements through our trade sheets and detailed insights.",
     },
     {
       img: "https://cdn-icons-png.flaticon.com/512/616/616490.png",
       title: "Best In Market",
-      text: "Never settle. Choose Grow Capital to achieve the best trading and investment results. Our expert team is dedicated to helping you succeed.",
+      text: "Don’t settle for less — experience top results with us. Our Invest Mart team is dedicated to delivering the finest services in the investment market.",
     },
     // 🔹 New 3 Cards added below
     {
       img: "https://cdn-icons-png.flaticon.com/512/747/747376.png",
       title: "Daily Research Report",
-      text: "Report helps you stay updated about the market. Get the benefit of market movements via our tradesheet and reports.",
+      text: "Stay updated with the latest market trends and take advantage of every movement through our insightful trade sheets and detailed research reports.",
     },
     {
       img: "https://cdn-icons-png.flaticon.com/512/2462/2462719.png",
       title: "Live Chat",
-      text: "We provide online assistance to our clients, both online and offline, for fearless trading. Always available for instant support.",
+      text: "We offer real-time support to our clients, both online and offline, ensuring confident and seamless trading with instant assistance whenever needed.",
     },
     {
       img: "https://cdn-icons-png.flaticon.com/512/1828/1828643.png",
       title: "Fidelity",
-      text: "Our research analysts are strongly committed to providing good intraday trading calls for reliable profits.",
+      text: "Backed by skilled research analysts dedicated to delivering accurate and effective intraday trading insights.",
     },
   ];
 

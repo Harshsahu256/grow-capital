@@ -453,6 +453,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { loginUser } from "../services/apiService"; // ✅ Correct import path
+import Logo from '../assets/navbar.png'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -499,8 +500,9 @@ const Login = () => {
           {/* Left Side Image */}
           <Col md={6} className="text-center mb-4 mb-md-0">
             <img
-              src="/assets/login-graphic.png"
-              alt="Grow Capital Login"
+              src={Logo}
+              alt="Prime  
+              . Capital Login"
               className="img-fluid rounded"
               style={{ maxHeight: "280px", objectFit: "contain" }}
             />
@@ -540,7 +542,7 @@ const Login = () => {
               </div>
 
               <div className="text-center mt-3">
-                <span>New to Grow Capital? </span>
+                <span>New to Prime Capital? </span>
                 <a href="/signup" className="text-primary text-decoration-none">
                   Create an account
                 </a>

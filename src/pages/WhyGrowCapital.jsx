@@ -156,6 +156,163 @@
 
 // export default WhyGrowCapital;
 
+// import React, { useState } from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import about1 from "../assets/WhyGrowCapital1.png";
+// import about2 from "../assets/WhyGrowCapital2.png";
+// import about3 from "../assets/WhyGrowCapital3.png";
+
+// const WhyGrowCapital = () => {
+//   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
+
+//   const cards = [
+//     {
+//       img: about1,
+//       title: "Market Research",
+//       text: "Do not have time to trade every day? Say goodbye to intraday trading and join our product dedicated to long-term traders. Make investments based on high-yielding research.",
+//     },
+//     {
+//       img: about2,
+//       title: "Market Pro",
+//       text: "Select from our wide range of short-term products designed for equity and commodity markets. Trade based on signals derived by our fundamental and technical analysts.",
+//     },
+//     {
+//       img: about3,
+//       title: "Support",
+//       text: "A support or support level is a financial term referring to the price level that historically a stock does not fall below. Buyers tend to purchase the stock at this level.",
+//     },
+//   ];
+
+//   return (
+//     <section
+//       className="py-5"
+//       style={{
+//      backgroundColor: "transparent",
+//         textAlign: "center",
+//       }}
+//     >
+//       <div className="container">
+//         <h2
+//           className="fw-bold mb-5"
+//           style={{
+//             color: "#0d6efd",
+//             backgroundColor: "rgba(13,110,253,0.08)",
+//             display: "inline-block",
+//             padding: "10px 28px",
+//             borderRadius: "50px",
+//             fontSize: "1.9rem",
+//             letterSpacing: "0.5px",
+//           }}
+//         >
+//           WHY GROW CAPITAL
+//         </h2>
+
+//         <div className="row justify-content-center g-4">
+//           {cards.map((card, index) => {
+//             const isHovered = hoveredCardIndex === index;
+
+//             // Main card container
+//             const cardContainerStyle = {
+//               width: "90%",
+//               minHeight: "380px", // ⬆️ Increased height for better balance
+//               backgroundColor: "#fff",
+//               border: "1px solid #f0f0f0",
+//               borderRadius: "1rem",
+//               overflow: "hidden",
+//               position: "relative",
+//               cursor: "pointer",
+//               transition:
+//                 "transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease",
+//               boxShadow: isHovered
+//                 ? "0 15px 35px rgba(13,110,253,0.4)"
+//                 : "0 5px 15px rgba(0,0,0,0.05)",
+//               transform: isHovered ? "translateY(-15px)" : "translateY(0)",
+//             };
+
+//             // Animated background layer
+//             const animatedBackgroundStyle = {
+//               position: "absolute",
+//               bottom: 0,
+//               left: 0,
+//               right: 0,
+//               height: isHovered ? "100%" : "0%",
+//               backgroundColor: "#40a5e9ff",
+//               transition: "height 0.5s ease",
+//               zIndex: 0,
+//             };
+
+//             // Content wrapper
+//             const contentWrapperStyle = {
+//               position: "relative",
+//               zIndex: 1,
+//               padding: "2rem 1.5rem", // ⬆️ Slightly increased padding
+//               textAlign: "center",
+//               height: "100%",
+//               display: "flex",
+//               flexDirection: "column",
+//               justifyContent: "center",
+//             };
+
+//             const imgStyle = {
+//               marginBottom: "20px",
+//               borderRadius: "15px",
+//               objectFit: "contain",
+//               background: isHovered ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.8)",
+//               padding: "5px",
+//               transition: "background 0.4s ease",
+//             };
+
+//             const titleStyle = {
+//               fontWeight: "bold",
+//               marginBottom: "1rem",
+//               color: isHovered ? "#fff" : "#0d6efd",
+//               transition: "color 0.3s ease",
+//             };
+
+//             const textStyle = {
+//               fontSize: "0.95rem",
+//               lineHeight: "1.6",
+//               color: isHovered ? "#fff" : "#555",
+//               transition: "color 0.3s ease",
+//             };
+
+//             return (
+//               <div
+//                 key={index}
+//                 className="col-md-4 col-sm-6 d-flex justify-content-center"
+//               >
+//                 <div
+//                   style={cardContainerStyle}
+//                   onMouseEnter={() => setHoveredCardIndex(index)}
+//                   onMouseLeave={() => setHoveredCardIndex(null)}
+//                 >
+//                   {/* Animated background layer */}
+//                   <div style={animatedBackgroundStyle}></div>
+
+//                   {/* Content */}
+//                   <div style={contentWrapperStyle}>
+//                     <img
+//                       src={card.img}
+//                       alt={card.title}
+//                       width="90"
+//                       height="90"
+//                       style={imgStyle}
+//                     />
+//                     <h5 style={titleStyle}>{card.title}</h5>
+//                     <p style={textStyle}>{card.text}</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default WhyGrowCapital;
+
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import about1 from "../assets/WhyGrowCapital1.png";
@@ -169,17 +326,17 @@ const WhyGrowCapital = () => {
     {
       img: about1,
       title: "Market Research",
-      text: "Do not have time to trade every day? Say goodbye to intraday trading and join our product dedicated to long-term traders. Make investments based on high-yielding research.",
+      text: "Don’t have time to trade daily? Forget frequent intraday moves and be part of our long-term investment plans. Build your portfolio with insights focused on strong and consistent returns.",
     },
     {
       img: about2,
       title: "Market Pro",
-      text: "Select from our wide range of short-term products designed for equity and commodity markets. Trade based on signals derived by our fundamental and technical analysts.",
+      text: "Choose from a diverse range of short-term investment options crafted for equity and commodity markets. Make smart trades guided by insights from our expert technical and fundamental analysts.",
     },
     {
       img: about3,
       title: "Support",
-      text: "A support or support level is a financial term referring to the price level that historically a stock does not fall below. Buyers tend to purchase the stock at this level.",
+      text: "Support refers to the price range where a stock generally stops declining and finds buying interest. At this point, investors often step in to purchase, preventing the price from falling further.",
     },
   ];
 
@@ -187,7 +344,7 @@ const WhyGrowCapital = () => {
     <section
       className="py-5"
       style={{
-     backgroundColor: "transparent",
+        backgroundColor: "transparent",
         textAlign: "center",
       }}
     >
@@ -204,17 +361,16 @@ const WhyGrowCapital = () => {
             letterSpacing: "0.5px",
           }}
         >
-          WHY GROW CAPITAL
+          WHY PRIME CAPITAL
         </h2>
 
         <div className="row justify-content-center g-4">
           {cards.map((card, index) => {
             const isHovered = hoveredCardIndex === index;
 
-            // Main card container
             const cardContainerStyle = {
-              width: "90%",
-              minHeight: "380px", // ⬆️ Increased height for better balance
+              width: "95%",
+              minHeight: "440px",
               backgroundColor: "#fff",
               border: "1px solid #f0f0f0",
               borderRadius: "1rem",
@@ -229,7 +385,6 @@ const WhyGrowCapital = () => {
               transform: isHovered ? "translateY(-15px)" : "translateY(0)",
             };
 
-            // Animated background layer
             const animatedBackgroundStyle = {
               position: "absolute",
               bottom: 0,
@@ -241,37 +396,53 @@ const WhyGrowCapital = () => {
               zIndex: 0,
             };
 
-            // Content wrapper
             const contentWrapperStyle = {
               position: "relative",
               zIndex: 1,
-              padding: "2rem 1.5rem", // ⬆️ Slightly increased padding
-              textAlign: "center",
+              padding: "2.5rem 1.8rem",
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              alignItems: "center", // ✅ centers horizontally
+              justifyContent: "flex-start", // ✅ keeps image at top
+              textAlign: "center",
+            };
+
+            const imgContainerStyle = {
+              display: "flex",
               justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              marginBottom: "25px",
+              marginTop: "10px",
             };
 
             const imgStyle = {
-              marginBottom: "20px",
+                width: "200px",   // 🔹 increased from 90px → 120px
+               height: "200px",  
+              width: "90px",
+              height: "90px",
               borderRadius: "15px",
               objectFit: "contain",
-              background: isHovered ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.8)",
-              padding: "5px",
-              transition: "background 0.4s ease",
+              background: isHovered
+                ? "rgba(255,255,255,1)"
+                : "rgba(255,255,255,0.8)",
+              padding: "6px",
+              transition: "background 0.4s ease, transform 0.4s ease",
+              transform: isHovered ? "scale(1.1)" : "scale(1)",
             };
 
             const titleStyle = {
               fontWeight: "bold",
               marginBottom: "1rem",
+              fontSize: "1.3rem",
               color: isHovered ? "#fff" : "#0d6efd",
               transition: "color 0.3s ease",
             };
 
             const textStyle = {
-              fontSize: "0.95rem",
-              lineHeight: "1.6",
+              fontSize: "1rem",
+              lineHeight: "1.7",
               color: isHovered ? "#fff" : "#555",
               transition: "color 0.3s ease",
             };
@@ -286,18 +457,11 @@ const WhyGrowCapital = () => {
                   onMouseEnter={() => setHoveredCardIndex(index)}
                   onMouseLeave={() => setHoveredCardIndex(null)}
                 >
-                  {/* Animated background layer */}
                   <div style={animatedBackgroundStyle}></div>
-
-                  {/* Content */}
                   <div style={contentWrapperStyle}>
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      width="90"
-                      height="90"
-                      style={imgStyle}
-                    />
+                    <div style={imgContainerStyle}>
+                      <img src={card.img} alt={card.title} style={imgStyle} />
+                    </div>
                     <h5 style={titleStyle}>{card.title}</h5>
                     <p style={textStyle}>{card.text}</p>
                   </div>

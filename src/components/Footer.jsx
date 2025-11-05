@@ -136,6 +136,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import Logo from '../assets/navbar.png'
+
+
 
 const Footer = () => {
   return (
@@ -150,21 +153,33 @@ const Footer = () => {
       <Container className="py-5">
         <Row className="gy-4 align-items-start text-center text-md-start">
           {/* 🔹 Left Section */}
-          <Col md={4}>
-            <div className="mb-3 d-flex justify-content-center justify-content-md-start">
-              <img
-                src="/assets/logo.png"
-                alt="Grow Capital"
-                style={{ width: "180px" }}
-              />
-            </div>
-            <p className="px-md-0 px-3">
-              Grow Capital is an Investment Advisory Company providing
-              recommendations for Stocks (Cash & F&O) traded in NSE & BSE, and
-              commodities like bullion, metals, and agro-commodities traded in
-              MCX and NCDEX.
-            </p>
-          </Col>
+        {/* 🔹 Left Section */}
+<Col md={4}>
+  <div
+    className="d-flex justify-content-center justify-content-md-start"
+    style={{
+      position: "relative",
+      top: "-25px", // 👈 logo ko top par uthane ke liye
+    }}
+  >
+    <img
+      src={Logo}
+      alt="Prime Capital"
+      style={{
+        width: "110px", // 👈 size chhota kar diya (150 → 110)
+        height: "auto",
+      }}
+    />
+  </div>
+  <p
+    className="px-md-0 px-3 mt-2"
+    style={{ fontSize: "14px", lineHeight: "1.6", color: "#ccc" }}
+  >
+    Prime Capital is a financial advisory firm offering expert recommendations
+    on stock cash and F&O segments listed on NSE and BSE, along with
+    commodities such as bullion, metals, and agro-products traded on MCX and NCDEX.
+  </p>
+</Col>
 
           {/* 🔹 Middle Section */}
           <Col md={4}>
@@ -205,7 +220,7 @@ const Footer = () => {
           {/* 🔹 Right Section */}
           <Col md={4}>
             <h6 className="text-light mb-3 fw-semibold">Contact Details</h6>
-            <p className="mb-2">B-15, Subhash Nagar, Bhopal - 462001</p>
+            <p className="mb-2">A-45 Shivaji Nagar, Bhopal – 462003</p>
             <p className="mb-1">
               <strong>Phone:</strong>{" "}
               <a
@@ -215,19 +230,19 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                8962315503
+              8352345303
               </a>
             </p>
             <p>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:info@smsgc.in"
+                href="mailto:capitalstock.in"
                 style={{
                   color: "#9aa0a6",
                   textDecoration: "none",
                 }}
               >
-                info@smsgc.in
+              capitalstock.in
               </a>
             </p>
 
@@ -275,11 +290,6 @@ const Footer = () => {
           borderTop: "1px solid #222",
         }}
       >
-        © {new Date().getFullYear()}{" "}
-        <span style={{ color: "#fff", fontWeight: "600" }}>
-          Aasmo Digital PVT. LTD
-        </span>
-        . All Rights Reserved.
       </div>
     </footer>
   );

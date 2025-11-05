@@ -410,7 +410,7 @@
 
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-
+import Logo from '../assets/navbar.png'
 function AppNavbar() {
   const location = useLocation();
 
@@ -418,10 +418,13 @@ function AppNavbar() {
     position: "relative",
     margin: "0 12px",
     color: "#000",
-    fontWeight: 500,
+    fontWeight: 750,
     textDecoration: "none",
     transition: "color 0.3s ease-in-out",
-    padding: "10px 0",
+    padding: "10px 0", // 👈 kam padding se text aur underline paas aa jayenge
+lineHeight: "1.2", // 👈 text aur underline ke beech ka gap tight ho jayega
+display: "inline-block", // 👈 alignment consistent rakhta hai
+
   };
 
   const activeLink = {
@@ -473,14 +476,23 @@ function AppNavbar() {
         className="shadow-sm sticky-top"
         style={{
           fontFamily: "Poppins, sans-serif",
-          padding: "18px 0",
+          padding: "15px 0",
         }}
       >
         <Container>
-          <Navbar.Brand as={Link} to="/" className="fw-bold fs-4">
+          {/* <Navbar.Brand as={Link} to="/" className="fw-bold fs-4">
             <span style={{ color: "#0d6efd" }}>Grow</span>{" "}
             <span style={{ color: "#000" }}>Capital</span>
-          </Navbar.Brand>
+          </Navbar.Brand> */}
+          <Navbar.Brand as={Link} to="/" style={{ marginLeft: "-30px" }}>
+  <img
+    src={Logo}
+    alt="Prime Capital Logo"
+    height="60" // 👈 height aap adjust kar sakte ho (e.g., 40 ya 60)
+    className="d-inline-block align-top"
+  />
+</Navbar.Brand>
+
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -525,7 +537,7 @@ function AppNavbar() {
                 <NavDropdown.Item as={Link} to="/insurance">
                   Insurance
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/ipo">
+                <NavDropdown.Item as={Link} to="/services">
                   IPO
                 </NavDropdown.Item>
               </NavDropdown>
