@@ -20,12 +20,12 @@
 //             <div className="mb-3">
 //               <img
 //                 src="/assets/logo.png"
-//                 alt="Grow Capital"
+//                 alt="STOCK MARKET INVESTING BY GROW CAPITAL"
 //                 style={{ width: "180px", marginBottom: "15px" }}
 //               />
 //             </div>
 //             <p>
-//               Grow Capital is an Investment Advisory Company basically providing
+//               STOCK MARKET INVESTING BY GROW CAPITAL is an Investment Advisory Company basically providing
 //               recommendations for Stocks - Cash and F&O traded in NSE & BSE,
 //               commodities including bullions, metals and agro-commodities traded
 //               in MCX, NCDEX.
@@ -164,9 +164,9 @@ const Footer = () => {
   >
     <img
       src={Logo}
-      alt="Prime Capital"
+      alt="STOCK MARKET INVESTING BY GROW CAPITAL"
       style={{
-        width: "110px", // 👈 size chhota kar diya (150 → 110)
+        width: "250px", // 👈 size chhota kar diya (150 → 110)
         height: "auto",
       }}
     />
@@ -175,7 +175,7 @@ const Footer = () => {
     className="px-md-0 px-3 mt-2"
     style={{ fontSize: "14px", lineHeight: "1.6", color: "#ccc" }}
   >
-    Prime Capital is a financial advisory firm offering expert recommendations
+    Stock Market Investing by Grow Capital is a financial advisory firm offering expert recommendations
     on stock cash and F&O segments listed on NSE and BSE, along with
     commodities such as bullion, metals, and agro-products traded on MCX and NCDEX.
   </p>

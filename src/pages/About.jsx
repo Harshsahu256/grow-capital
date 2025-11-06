@@ -64,7 +64,7 @@
 // //           <h2 className="text-center mb-4 fw-bold">About Us</h2>
 // //           <ul className="fs-6">
 // //             <li>
-// //               Grow Capital is an Investment Advisory Company basically providing
+// //               STOCK MARKET INVESTING BY GROW CAPITAL is an Investment Advisory Company basically providing
 // //               recommendations for Stocks—Cash and F&O traded in NSE & BSE,
 // //               commodities including bullions, metals, and agro-commodities traded
 // //               in MCX, NCDEX.
@@ -217,7 +217,7 @@
 //             {/* Animate each list item to fade in with a slight delay */}
 //             <Fade direction="up" triggerOnce delay={100}>
 //               <li>
-//                 Grow Capital is an Investment Advisory Company basically providing
+//                 STOCK MARKET INVESTING BY GROW CAPITAL is an Investment Advisory Company basically providing
 //                 recommendations for Stocks—Cash and F&O traded in NSE & BSE,
 //                 commodities including bullions, metals, and agro-commodities traded
 //                 in MCX, NCDEX.
@@ -417,7 +417,7 @@ const About = () => {
           <ul className="fs-6 about-text list-unstyled">
             <Fade direction="up" triggerOnce delay={100}>
               <li className="mb-3">
-                  Prime Capital is an Investment Advisory Company providing
+                Stock Market Investing by Grow Capital is an Investment Advisory Company providing
                 recommendations for Stocks—Cash and F&O traded in NSE & BSE,
                 commodities including bullions, metals, and agro-commodities
                 traded in MCX, NCDEX.

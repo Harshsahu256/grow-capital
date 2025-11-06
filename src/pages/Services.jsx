@@ -235,7 +235,7 @@ const Services = () => {
         <section className="mb-5 mt-4">
           <h5 className="fw-bold">Equity</h5>
           <p>
-            Grow Capital provides a wide variety of services in the Equity Market, suitable for
+           Stock Market Investing by Grow Capital provides a wide variety of services in the Equity Market, suitable for
             investors. Equity in the share market is broadly defined as a part of the company's
             capital held by investors, promoters, institutions, and alike. Any investor looking to
             invest in equity can do so via IPOs, mutual funds, or direct stock trading. Equity is
@@ -249,7 +249,7 @@ const Services = () => {
         <section className="mb-5">
           <h5 className="fw-bold">Commodity</h5>
           <p>
-            Grow Capital provides services in the Commodity Market, suitable for investors. An
+           Stock Market Investing by Grow Capital provides services in the Commodity Market, suitable for investors. An
             online commodity market deals with monetary trading rather than physical objects. This
             market allows speculators from over 50 important markets to trade efficiently. Online
             commodity trading is popular across four main categories, and prospects contracts are
@@ -261,7 +261,7 @@ const Services = () => {
         <section className="mb-5">
           <h5 className="fw-bold">Derivative</h5>
           <p>
-            Grow Capital provides services in the Derivative Market, suitable for investors.
+            Stock Market Investing by Grow Capital provides services in the Derivative Market, suitable for investors.
             Derivatives are financial securities whose value depends on an underlying asset such as
             stocks, bonds, commodities, currencies, interest rates, or market indexes. Derivatives
             can be traded over-the-counter (OTC) or on an exchange, allowing hedging or
@@ -273,7 +273,7 @@ const Services = () => {
         <section>
           <h5 className="fw-bold">Forex</h5>
           <p>
-            Grow Capital provides services in the Forex Market, suitable for investors. Forex, also
+            Stock Market Investing by Grow Capital provides services in the Forex Market, suitable for investors. Forex, also
             called foreign exchange or FX, is a decentralized global market where all the world's
             currencies trade. It is the largest and most liquid market in the world, with an average
             daily trading volume exceeding $5 trillion.

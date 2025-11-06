@@ -8,8 +8,8 @@
 // // // //     <Navbar bg="light" expand="lg" className="shadow-sm sticky-top">
 // // // //       <Container>
 // // // //         <Navbar.Brand as={Link} to="/">
-// // // //           {/* <img src={logo} alt="Grow Capital" height="40" />{" "} */}
-// // // //           <span className="fw-bold text-primary">Grow Capital</span>
+// // // //           {/* <img src={logo} alt="STOCK MARKET INVESTING BY GROW CAPITAL" height="40" />{" "} */}
+// // // //           <span className="fw-bold text-primary">STOCK MARKET INVESTING BY GROW CAPITAL</span>
 // // // //         </Navbar.Brand>
 // // // //         <Navbar.Toggle />
 // // // //         <Navbar.Collapse>
@@ -487,7 +487,7 @@ display: "inline-block", // 👈 alignment consistent rakhta hai
           <Navbar.Brand as={Link} to="/" style={{ marginLeft: "-30px" }}>
   <img
     src={Logo}
-    alt="Prime Capital Logo"
+    alt="STOCK MARKET INVESTING BY GROW CAPITAL Logo"
     height="60" // 👈 height aap adjust kar sakte ho (e.g., 40 ya 60)
     className="d-inline-block align-top"
   />

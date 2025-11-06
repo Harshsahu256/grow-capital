@@ -13,7 +13,7 @@
 // //           <Col md={6} className="text-center mb-4 mb-md-0">
 // //             <img
 // //               src="/assets/login-graphic.png"
-// //               alt="Grow Capital Login"
+// //               alt="STOCK MARKET INVESTING BY GROW CAPITAL Login"
 // //               className="img-fluid rounded"
 // //               style={{ maxHeight: "280px", objectFit: "contain" }}
 // //             />
@@ -54,7 +54,7 @@
 // //               </div>
 
 // //               <div className="text-center mt-3">
-// //                 <span>New to Grow Capital? </span>
+// //                 <span>New to STOCK MARKET INVESTING BY GROW CAPITAL? </span>
 // //                 <a href="/signup" className="text-primary text-decoration-none">
 // //                   Create an account
 // //                 </a>
@@ -68,7 +68,7 @@
 // //                   fontSize: "0.9rem",
 // //                 }}
 // //               >
-// //                 Never share your OTP, PIN or Password with anyone. Grow Capital
+// //                 Never share your OTP, PIN or Password with anyone. STOCK MARKET INVESTING BY GROW CAPITAL
 // //                 or its employees will never ask you for any of the above details.
 // //               </div>
 // //             </Form>
@@ -131,7 +131,7 @@
 //           <Col md={6} className="text-center mb-4 mb-md-0">
 //             <img
 //               src="/assets/login-graphic.png"
-//               alt="Grow Capital Login"
+//               alt="STOCK MARKET INVESTING BY GROW CAPITAL Login"
 //               className="img-fluid rounded"
 //               style={{ maxHeight: "280px", objectFit: "contain" }}
 //             />
@@ -181,7 +181,7 @@
 //               </div>
 
 //               <div className="text-center mt-3">
-//                 <span>New to Grow Capital? </span>
+//                 <span>New to STOCK MARKET INVESTING BY GROW CAPITAL? </span>
 //                 <a href="/signup" className="text-primary text-decoration-none">
 //                   Create an account
 //                 </a>
@@ -195,7 +195,7 @@
 //                   fontSize: "0.9rem",
 //                 }}
 //               >
-//                 Never share your OTP, PIN or Password with anyone. Grow Capital
+//                 Never share your OTP, PIN or Password with anyone. STOCK MARKET INVESTING BY GROW CAPITAL
 //                 will never ask for it.
 //               </div>
 //             </Form>
@@ -258,7 +258,7 @@
 //           <Col md={6} className="text-center mb-4 mb-md-0">
 //             <img
 //               src="/assets/login-graphic.png"
-//               alt="Grow Capital Login"
+//               alt="STOCK MARKET INVESTING BY GROW CAPITAL Login"
 //               className="img-fluid rounded"
 //               style={{ maxHeight: "280px", objectFit: "contain" }}
 //             />
@@ -308,7 +308,7 @@
 //               </div>
 
 //               <div className="text-center mt-3">
-//                 <span>New to Grow Capital? </span>
+//                 <span>New to STOCK MARKET INVESTING BY GROW CAPITAL? </span>
 //                 <a href="/signup" className="text-primary text-decoration-none">
 //                   Create an account
 //                 </a>
@@ -322,7 +322,7 @@
 //                   fontSize: "0.9rem",
 //                 }}
 //               >
-//                 Never share your OTP, PIN or Password with anyone. Grow Capital will never ask for it.
+//                 Never share your OTP, PIN or Password with anyone. STOCK MARKET INVESTING BY GROW CAPITAL will never ask for it.
 //               </div>
 //             </Form>
 //           </Col>
@@ -383,7 +383,7 @@
 //           <Col md={6} className="text-center mb-4 mb-md-0">
 //             <img
 //               src="/assets/login-graphic.png"
-//               alt="Grow Capital Login"
+//               alt="STOCK MARKET INVESTING BY GROW CAPITAL Login"
 //               className="img-fluid rounded"
 //               style={{ maxHeight: "280px", objectFit: "contain" }}
 //             />
@@ -422,7 +422,7 @@
 //               </div>
 
 //               <div className="text-center mt-3">
-//                 <span>New to Grow Capital? </span>
+//                 <span>New to STOCK MARKET INVESTING BY GROW CAPITAL? </span>
 //                 <a href="/signup" className="text-primary text-decoration-none">
 //                   Create an account
 //                 </a>
@@ -501,10 +501,10 @@ const Login = () => {
           <Col md={6} className="text-center mb-4 mb-md-0">
             <img
               src={Logo}
-              alt="Prime  
+              alt="Grow
               . Capital Login"
               className="img-fluid rounded"
-              style={{ maxHeight: "280px", objectFit: "contain" }}
+              style={{ maxHeight: "100px", objectFit: "contain" }}
             />
           </Col>
 
@@ -542,7 +542,7 @@ const Login = () => {
               </div>
 
               <div className="text-center mt-3">
-                <span>New to Prime Capital? </span>
+                <span>New to Stock Market Investing by Grow Capital? </span>
                 <a href="/signup" className="text-primary text-decoration-none">
                   Create an account
                 </a>

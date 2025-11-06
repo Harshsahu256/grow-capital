@@ -61,3 +61,25 @@ export const getUserPositions = async () => {
     return [];
   }
 };
+
+// ✅ Upload Single File (User)
+export const uploadSingleFile = async (file) => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await axios.post(`${API_ENDPOINT.UPLOAD_SINGLE_FILE}`, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data"
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error("Error in uploadSingleFile:", error.response?.data || error.message);
+    throw error;
+  }
+};

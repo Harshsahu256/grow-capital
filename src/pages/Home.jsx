@@ -58,7 +58,7 @@
 //                   textShadow: "0 0 10px rgba(0,255,255,0.7)",
 //                 }}
 //               >
-//                 Grow Capital
+//                 STOCK MARKET INVESTING BY GROW CAPITAL
 //               </span>
 //             </h1>
 
@@ -179,7 +179,7 @@
 //                 }}
 //                 className="animate__animated animate__pulse animate__infinite"
 //               >
-//                 Grow Capital
+//                 STOCK MARKET INVESTING BY GROW CAPITAL
 //               </span>
 //             </h1>
 
@@ -293,7 +293,7 @@ const Home = () => {
                 marginBottom: "15px",
               }}
             >
-              Prime Capital
+              STOCK MARKET INVESTING BY GROW CAPITAL
             </h1>
 
             {/* Subtext */}

@@ -6,7 +6,7 @@
 //     {
 //       img: "https://cdn-icons-png.flaticon.com/512/1828/1828640.png",
 //       title: "Quality",
-//       text: "Quality is the major strength of Grow Capital. We are committed to providing high-quality trading insights and trusted guidance to our clients.",
+//       text: "Quality is the major strength of STOCK MARKET INVESTING BY GROW CAPITAL. We are committed to providing high-quality trading insights and trusted guidance to our clients.",
 //     },
 //     {
 //       img: "https://cdn-icons-png.flaticon.com/512/3523/3523063.png",
@@ -16,7 +16,7 @@
 //     {
 //       img: "https://cdn-icons-png.flaticon.com/512/616/616490.png",
 //       title: "Best In Market",
-//       text: "Never settle. Choose Grow Capital to achieve the best trading and investment results. Our expert team is dedicated to helping you succeed.",
+//       text: "Never settle. Choose STOCK MARKET INVESTING BY GROW CAPITAL to achieve the best trading and investment results. Our expert team is dedicated to helping you succeed.",
 //     },
 //   ];
 

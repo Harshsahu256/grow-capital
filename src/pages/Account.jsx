@@ -71,7 +71,7 @@
 //             letterSpacing: "0.5px",
 //           }}
 //         >
-//           Grow Capital’S BENEFIT
+//           STOCK MARKET INVESTING BY GROW CAPITAL’S BENEFIT
 //         </h4>
 //       </div>
 
@@ -279,7 +279,7 @@ const Account = () => {
             letterSpacing: "0.5px",
           }}
         >
-            Prime Capital’S BENEFIT
+            STOCK MARKET INVESTING BY GROW CAPITAL’S BENEFIT
         </h4>
       </div>
 

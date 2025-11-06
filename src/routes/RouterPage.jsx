@@ -71,6 +71,8 @@ import Dashboard from "../pages/User/Dashboard";
 import UserAccount from "../pages/User/UserAccount";
 import UserProfile from "../pages/User/UserProfile.jsx";
 import DepositPage from "../pages/User/DepositPage.jsx";
+import UploadFile from "../pages/User/UploadFile.jsx"
+
 
 const RouterPage = () => {
   return (
@@ -97,6 +99,7 @@ const RouterPage = () => {
           <Route path="/userAccount" element={<UserAccount />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/deposit" element={<DepositPage />} />
+          <Route path="/uploadfile" element={<UploadFile/>} />
         </Route>
       </Routes>
       <Footer />

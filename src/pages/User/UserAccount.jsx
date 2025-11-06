@@ -68,7 +68,7 @@ const UserAccount = () => {
               <i className="bi bi-file-earmark-text fs-5 text-primary me-3"></i>
               <div>
                 <strong>Statement / Ledger</strong>
-                <div className="small text-muted">Your Transactions with   Prime Capital</div>
+                <div className="small text-muted">Your Transactions with Stock Market Investing by Grow Capital</div>
               </div>
             </div>
 

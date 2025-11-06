@@ -27,7 +27,7 @@
 // //             letterSpacing: "2px",
 // //           }}
 // //         >
-// //           GROW CAPITAL
+// //           STOCK MARKET INVESTING BY GROW CAPITAL
 // //         </h2>
 
 // //         <div
@@ -158,7 +158,7 @@
 // //             letterSpacing: "2px",
 // //           }}
 // //         >
-// //           GROW CAPITAL
+// //           STOCK MARKET INVESTING BY GROW CAPITAL
 // //         </h2>
 
 // //       {accounts && accounts.length > 0 ? (
@@ -263,7 +263,7 @@
 //             letterSpacing: "2px",
 //           }}
 //         >
-//           GROW CAPITAL
+//           STOCK MARKET INVESTING BY GROW CAPITAL
 //         </h2>
 
 //         {/* ✅ Show Bank Accounts */}
@@ -374,7 +374,7 @@ const DepositPage = () => {
             marginBottom: "25px",
           }}
         >
-           PRIME CAPITAL 💹
+           STOCK MARKET INVESTING BY GROW CAPITAL 💹
         </h1>
 
         <p style={{ color: "#555", fontSize: "18px", marginBottom: "30px" }}>

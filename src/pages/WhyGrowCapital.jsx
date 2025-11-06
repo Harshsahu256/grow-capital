@@ -47,7 +47,7 @@
 //             letterSpacing: "0.5px",
 //           }}
 //         >
-//           WHY GROW CAPITAL
+//           WHY STOCK MARKET INVESTING BY GROW CAPITAL
 //         </h2>
 
 //         <div className="row justify-content-center g-4">
@@ -204,7 +204,7 @@
 //             letterSpacing: "0.5px",
 //           }}
 //         >
-//           WHY GROW CAPITAL
+//           WHY STOCK MARKET INVESTING BY GROW CAPITAL
 //         </h2>
 
 //         <div className="row justify-content-center g-4">
@@ -361,7 +361,7 @@ const WhyGrowCapital = () => {
             letterSpacing: "0.5px",
           }}
         >
-          WHY PRIME CAPITAL
+          WHY STOCK MARKET INVESTING BY GROW CAPITAL
         </h2>
 
         <div className="row justify-content-center g-4">

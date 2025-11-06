@@ -64,7 +64,7 @@
     
 
 //       <ul>
-//         <li>Grow Capital is an Investment Advisory Company providing recommendations for Stocks, F&O traded in NSE & BSE, commodities including bullions, metals, and agro-commodities traded in MCX, NCDEX.</li>
+//         <li>STOCK MARKET INVESTING BY GROW CAPITAL is an Investment Advisory Company providing recommendations for Stocks, F&O traded in NSE & BSE, commodities including bullions, metals, and agro-commodities traded in MCX, NCDEX.</li>
 //         <li>We also provide weekly & daily newsletters for trading preparation, and services like FOREX Calls & Commodity Calls.</li>
 //         <li>We provide recommendations live through SMS, ensuring instant delivery without delay.</li>
 //         <li>Any technical or network issues may cause temporary message delivery pause.</li>
@@ -130,7 +130,7 @@ const Insurance = () => {
     <h5 className="fw-bold">Our Insurance Services</h5>
     <ul style={{ paddingLeft: "20px", lineHeight: "1.7" }}>
       <li>
-        Grow Capital is an Investment Advisory Company providing recommendations for Stocks,
+        Stock Market Investing by Grow Capital is an Investment Advisory Company providing recommendations for Stocks,
         F&O traded in NSE & BSE, and commodities including bullions, metals, and
         agro-commodities traded on MCX & NCDEX.
       </li>
