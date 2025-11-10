@@ -795,7 +795,7 @@ const UserDashboard = () => {
         </div>
 
         {/* 💰 Add Funds Section */}
-        <div className="mt-5 p-4 border rounded-4 shadow-sm bg-light">
+        <div className="mt-5 p-4 border rounded-4 shadow-sm bg-light mb-5">
           <h5 className="fw-bold text-dark mb-3">
             Add Funds to Trading Balance
           </h5>

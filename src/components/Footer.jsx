@@ -220,7 +220,7 @@ const Footer = () => {
           {/* 🔹 Right Section */}
           <Col md={4}>
             <h6 className="text-light mb-3 fw-semibold">Contact Details</h6>
-            <p className="mb-2">A-45 Shivaji Nagar, Bhopal – 462003</p>
+            <p className="mb-2">Amarnagar faridabad haryana - 121003</p>
             <p className="mb-1">
               <strong>Phone:</strong>{" "}
               <a
@@ -230,19 +230,19 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-              8352345303
+            8982261363
               </a>
             </p>
             <p>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:capitalstock.in"
+                href="mailto:Info@smigc.in"
                 style={{
                   color: "#9aa0a6",
                   textDecoration: "none",
                 }}
               >
-              capitalstock.in
+             Info@smigc.in
               </a>
             </p>
 

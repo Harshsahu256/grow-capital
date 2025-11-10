@@ -5,15 +5,15 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const BottomNavbar = () => {
   return (
     <nav
-      className="bg-light border-top shadow-sm position-fixed bottom-0 w-100"
-      style={{ zIndex: 1000 }}
+      className="bg-light border-top shadow-sm  bottom-0 w-100"
+      style={{ zIndex: 1000  , }}
     >
       <div
         className="d-flex justify-content-around align-items-center py-2"
         style={{ fontSize: "0.9rem" }}
       >
         <NavLink
-          to="/home"
+          to="/userDashboard"
           className={({ isActive }) =>
             `text-decoration-none text-center ${isActive ? "text-primary" : "text-dark"}`
           }

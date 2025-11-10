@@ -82,3 +82,30 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.profile-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-section-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.profile-detail-item {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
