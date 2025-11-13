@@ -8,6 +8,8 @@ export const API_BASE_URL = "http://localhost:5000/api/auth";
 export const API_ENDPOINT = {
   USER_REGISTER: `${API_BASE_URL}/register`,
   USER_LOGIN: `${API_BASE_URL}/login`,
+   USER_PROFILE: `${API_BASE_URL}/profile`,  // <-- yaha add karo
+  
     GET_BANK_ACCOUNTS: `${API_BASE_URL}/bankAccounts`, // ✅ New endpoint added
       GET_ACCOUNTS:`${API_BASE_URL}/positions/user`,
 

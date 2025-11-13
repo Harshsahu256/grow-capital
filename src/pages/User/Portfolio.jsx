@@ -423,15 +423,220 @@
 // export default Portfolio;
 
 
+// import React, { useState, useEffect } from "react";
+// import { Container, Card, Nav, Image, Table, Spinner, Row, Col, Form } from "react-bootstrap";
+// import { getUserPositions } from "../../services/apiService";
+// import LiveTicker from "../LiveTicker";
+// import BottomNavbar from "./BottomNavbar";
+
+// const Portfolio = () => {
+//   const user = JSON.parse(localStorage.getItem("user"));
+//   const [activeTab, setActiveTab] = useState("positions");
+//   const [positions, setPositions] = useState([]);
+//   const [filteredPositions, setFilteredPositions] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [totals, setTotals] = useState({
+//     profit: 0,
+//     loss: 0,
+//     net: 0,
+//     totalPrice: 0,
+//   });
+//   const [filterDate, setFilterDate] = useState("");
+
+//   useEffect(() => {
+//     const fetchPositions = async () => {
+//       setLoading(true);
+//       const data = await getUserPositions();
+//       if (data && Array.isArray(data)) {
+//         setPositions(data);
+//         setFilteredPositions(data);
+//         calculateTotals(data);
+//       }
+//       setLoading(false);
+//     };
+//     fetchPositions();
+//   }, []);
+
+//   // ✅ Calculate totals helper
+//   const calculateTotals = (data) => {
+//     let profit = 0;
+//     let loss = 0;
+//     let totalPriceSum = 0;
+
+//     data.forEach((item) => {
+//       if (item.totalProfit >= 0) profit += item.totalProfit;
+//       else loss += item.totalProfit;
+
+//       totalPriceSum += item.totalPrice || 0;
+//     });
+
+//     setTotals({
+//       profit,
+//       loss,
+//       net: profit + loss,
+//       totalPrice: totalPriceSum,
+//     });
+//   };
+
+//   // ✅ Format number helper
+//   const formatAmount = (num) =>
+//     num?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+//   // ✅ Handle date filter
+//   const handleDateChange = (e) => {
+//     const selectedDate = e.target.value;
+//     setFilterDate(selectedDate);
+
+//     if (selectedDate === "") {
+//       setFilteredPositions(positions);
+//       calculateTotals(positions);
+//     } else {
+//       const filtered = positions.filter(
+//         (pos) => new Date(pos.createdAt).toLocaleDateString() === new Date(selectedDate).toLocaleDateString()
+//       );
+//       setFilteredPositions(filtered);
+//       calculateTotals(filtered);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <Container className="py-4">
+//         {/* 👋 Greeting */}
+//         <div className="d-flex align-items-center mb-3">
+//           <Image
+//             src="https://cdn-icons-png.flaticon.com/512/219/219970.png"
+//             roundedCircle
+//             width="45"
+//             height="45"
+//             className="me-2"
+//           />
+//           <h5 className="mb-0">Hi {user?.fullName || "Trader"} 👋</h5>
+//         </div>
+
+//         {/* 📊 Market Today */}
+//         <Card className="shadow-sm mb-4 border-0">
+//           <Card.Body>
+//             <h6 className="text-start mb-3 fw-semibold">Market Today</h6>
+//             <LiveTicker />
+//           </Card.Body>
+//         </Card>
+
+//         {/* 📁 Portfolio Section */}
+//         <h5 className="fw-semibold mb-3 text-start">Portfolio</h5>
+
+//         {/* 📅 Date Filter */}
+//         <Form.Group className="mb-3" controlId="filterDate">
+//           <Form.Label>Filter by Date:</Form.Label>
+//           <Form.Control
+//             type="date"
+//             value={filterDate}
+//             onChange={handleDateChange}
+//           />
+//         </Form.Group>
+
+//         {/* 💎 Summary Cards */}
+//         <Row className="mb-4">
+//           <Col md={3} sm={6} className="mb-2">
+//             <Card className="shadow-sm text-center p-3 bg-light border-0">
+//               <h6>Total Price</h6>
+//               <h5 className="fw-bold">₹{formatAmount(totals.totalPrice)}</h5>
+//             </Card>
+//           </Col>
+//           <Col md={3} sm={6} className="mb-2">
+//             <Card className="shadow-sm text-center p-3 bg-light border-0">
+//               <h6>Total Profit</h6>
+//               <h5 className="fw-bold" style={{ color: "green" }}>
+//                 ₹{formatAmount(totals.profit)}
+//               </h5>
+//             </Card>
+//           </Col>
+//           <Col md={3} sm={6} className="mb-2">
+//             <Card className="shadow-sm text-center p-3 bg-light border-0">
+//               <h6>Total Loss</h6>
+//               <h5 className="fw-bold" style={{ color: "red" }}>
+//                 ₹{formatAmount(Math.abs(totals.loss))}
+//               </h5>
+//             </Card>
+//           </Col>
+//           <Col md={3} sm={6} className="mb-2">
+//             <Card className="shadow-sm text-center p-3 bg-light border-0">
+//               <h6>Net Total</h6>
+//               <h5 className="fw-bold" style={{ color: totals.net >= 0 ? "green" : "red" }}>
+//                 ₹{formatAmount(totals.net)}
+//               </h5>
+//             </Card>
+//           </Col>
+//         </Row>
+
+//         {/* 📈 Table */}
+//         <Card className="shadow-sm border-0 p-4 text-center">
+//           {loading ? (
+//             <Spinner animation="border" />
+//           ) : filteredPositions.length === 0 ? (
+//             <>
+//               <img
+//                 src="https://cdni.iconscout.com/illustration/premium/thumb/no-data-found-illustration-download-in-svg-png-gif-file-formats--empty-error-page-pack-business-illustrations-5296760.png"
+//                 alt="No Data"
+//                 className="img-fluid"
+//                 style={{ maxWidth: "250px" }}
+//               />
+//               <p className="mt-3 text-muted">No Positions Found for Selected Date</p>
+//             </>
+//           ) : (
+//             <Table striped bordered hover responsive className="align-middle mb-5">
+//               <thead>
+//                 <tr>
+//                   <th>Company</th>
+//                   <th>Buy</th>
+//                   <th>Sell</th>
+//                   <th>Qty</th>
+//                   <th>Total Price</th>
+//                   <th>Profit</th>
+//                   <th>Date</th>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {filteredPositions.map((pos) => (
+//                   <tr key={pos._id}>
+//                     <td>{pos.companyName}</td>
+//                     <td>₹{formatAmount(pos.buy)}</td>
+//                     <td>₹{formatAmount(pos.sell)}</td>
+//                     <td>{pos.quantity?.toFixed(2)}</td>
+//                     <td>₹{formatAmount(pos.totalPrice)}</td>
+//                     <td
+//                       style={{
+//                         color: pos.totalProfit >= 0 ? "green" : "red",
+//                         fontWeight: "bold",
+//                       }}
+//                     >
+//                       ₹{formatAmount(pos.totalProfit)}
+//                     </td>
+//                     <td>{new Date(pos.createdAt).toLocaleDateString()}</td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </Table>
+//           )}
+//         </Card>
+//       </Container>
+
+//       <BottomNavbar />
+//     </>
+//   );
+// };
+
+// export default Portfolio;
+
+
 import React, { useState, useEffect } from "react";
-import { Container, Card, Nav, Image, Table, Spinner, Row, Col, Form } from "react-bootstrap";
+import { Container, Card, Image, Spinner, Row, Col, Form } from "react-bootstrap";
 import { getUserPositions } from "../../services/apiService";
 import LiveTicker from "../LiveTicker";
 import BottomNavbar from "./BottomNavbar";
 
 const Portfolio = () => {
   const user = JSON.parse(localStorage.getItem("user"));
-  const [activeTab, setActiveTab] = useState("positions");
   const [positions, setPositions] = useState([]);
   const [filteredPositions, setFilteredPositions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -569,56 +774,66 @@ const Portfolio = () => {
           </Col>
         </Row>
 
-        {/* 📈 Table */}
-        <Card className="shadow-sm border-0 p-4 text-center">
+        {/* 📈 Positions as Cards (one below the other, styled like the image) */}
+        <div className="positions-list">
           {loading ? (
-            <Spinner animation="border" />
+            <div className="text-center p-4">
+              <Spinner animation="border" />
+            </div>
           ) : filteredPositions.length === 0 ? (
-            <>
+            <Card className="shadow-sm border-0 p-4 text-center mb-3">
               <img
                 src="https://cdni.iconscout.com/illustration/premium/thumb/no-data-found-illustration-download-in-svg-png-gif-file-formats--empty-error-page-pack-business-illustrations-5296760.png"
                 alt="No Data"
-                className="img-fluid"
+                className="img-fluid mx-auto"
                 style={{ maxWidth: "250px" }}
               />
               <p className="mt-3 text-muted">No Positions Found for Selected Date</p>
-            </>
+            </Card>
           ) : (
-            <Table striped bordered hover responsive className="align-middle mb-5">
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Buy</th>
-                  <th>Sell</th>
-                  <th>Qty</th>
-                  <th>Total Price</th>
-                  <th>Profit</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredPositions.map((pos) => (
-                  <tr key={pos._id}>
-                    <td>{pos.companyName}</td>
-                    <td>₹{formatAmount(pos.buy)}</td>
-                    <td>₹{formatAmount(pos.sell)}</td>
-                    <td>{pos.quantity?.toFixed(2)}</td>
-                    <td>₹{formatAmount(pos.totalPrice)}</td>
-                    <td
-                      style={{
-                        color: pos.totalProfit >= 0 ? "green" : "red",
-                        fontWeight: "bold",
-                      }}
+            filteredPositions.map((pos) => (
+              <Card key={pos._id} className="shadow-sm border-0 p-3 mb-3"> {/* Card padding for overall spacing, mb-3 for spacing between cards */}
+                <Card.Body className="p-0"> {/* No padding on Card.Body, content handles its own spacing */}
+                  {/* Top section: Company Name, Date, Qty */}
+                  <div className="d-flex justify-content-between align-items-center mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-0">{pos.companyName}</h6> {/* CRUDE OIL (SELL) */}
+                      <small className="text-muted">{new Date(pos.createdAt).toLocaleDateString()} | Intraday</small> {/* 19 Nov 2025 | Intraday */}
+                    </div>
+                    <div className="text-end">
+                      <small className="text-muted d-block">Qty</small> {/* Qty */}
+                      {/* Assuming pos.quantity is the number of lots (e.g., 1) and lot size is 100 for Crude Oil */}
+                      <h6 className="fw-bold mb-0">{pos.quantity} (100)</h6> {/* 1(100) */}
+                    </div>
+                  </div>
+
+                  {/* Middle section: Avg Buy Price, Avg Sell Price */}
+                  <Row className="gx-0 mb-2"> {/* gx-0 removes horizontal gutter, mb-2 for spacing below this block */}
+                    <Col xs={6} className="text-start">
+                      <small className="text-muted d-block">Avg Buy Price</small>
+                      <h6 className="fw-bold mb-0">₹{formatAmount(pos.buy)}</h6> {/* ₹ 5338 */}
+                    </Col>
+                    <Col xs={6} className="text-end">
+                      <small className="text-muted d-block">Avg Sell Price</small>
+                      <h6 className="fw-bold mb-0">₹{formatAmount(pos.sell)}</h6> {/* ₹ 5388 */}
+                    </Col>
+                  </Row>
+
+                  {/* Bottom section: Gain */}
+                  <div className="text-end">
+                    <small className="text-muted d-block">Gain</small>
+                    <h6
+                      className="fw-bold mb-0"
+                      style={{ color: pos.totalProfit >= 0 ? "green" : "red" }}
                     >
-                      ₹{formatAmount(pos.totalProfit)}
-                    </td>
-                    <td>{new Date(pos.createdAt).toLocaleDateString()}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+                      {pos.totalProfit >= 0 ? "+" : "-"}₹{formatAmount(Math.abs(pos.totalProfit))} {/* +₹ 5,000.00 */}
+                    </h6>
+                  </div>
+                </Card.Body>
+              </Card>
+            ))
           )}
-        </Card>
+        </div>
       </Container>
 
       <BottomNavbar />

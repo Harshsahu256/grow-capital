@@ -15,6 +15,8 @@ export const registerUser = async (formData) => {
   }
 };
 
+
+
 export const loginUser = async (formData) => {
   try {
     const response = await axios.post(API_ENDPOINT.USER_LOGIN, formData, {
@@ -183,6 +185,23 @@ export const sendContactMessage = async (data) => {
     return response.data;
   } catch (error) {
     console.error("Error sending contact message:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+
+
+export const getUserProfile = async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const response = await axios.get(API_ENDPOINT.USER_PROFILE, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    return response.data.data; // <-- notice the .data here
+  } catch (error) {
+    console.error("Error fetching user profile:", error.response?.data || error.message);
     throw error;
   }
 };

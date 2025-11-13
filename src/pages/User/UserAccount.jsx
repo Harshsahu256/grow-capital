@@ -495,7 +495,7 @@ const UserAccount = () => {
         </div>
 
         {/* ✅ SOCIAL SECTION */}
-      <div className="text-center mb-5">
+      {/* <div className="text-center mb-5">
   <h6 className="fw-bold">Join Our Community</h6>
 
   <div className="d-flex justify-content-center gap-3 mt-2">
@@ -505,7 +505,7 @@ const UserAccount = () => {
     <i className="bi bi-linkedin fs-4"></i>
     <i className="bi bi-twitter-x fs-4"></i>
   </div>
-</div>
+</div> */}
 
       </div>
 

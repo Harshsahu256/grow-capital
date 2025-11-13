@@ -102,121 +102,107 @@
 // };
 
 // export default UserProfile;
-import React from "react";
 
-const Profile = () => {
-  const user = {
-    fullName: "Md Hiphjaan",
-    clientId: "GC195989",
-    email: "gjcmohdhiphijaan7755@gmail.com",
-    phone: "7755027256",
-    aadhar: "395828213685",
-    pan: "AUMPH5385D",
-    dob: "07-08-1996",
 
-    bankName: "Bank of Baroda",
-    ifsc: "BARB0TRISUN",
-    branch: "TRISUNDI, UP",
-    accountNo: "20930100016371",
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Card, Button, Form, Image, Spinner, Alert } from "react-bootstrap";
+import { getUserProfile } from "../../services/apiService";
 
-    nomineeName: "RUQAIYA BANO",
-    nomineeAadhar: "459487153070",
-    nomineeRelation: "Wife",
+const UserProfile = () => {
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    profilePic:
-      "https://cdn-icons-png.flaticon.com/512/219/219970.png",
-  };
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const data = await getUserProfile(); // API call returns response.data.data
+        setProfile(data);
+      } catch (err) {
+        setError(err.response?.data?.message || "Failed to fetch profile");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const card = {
-    margin: "0 20px 20px 20px",
-    background: "#fff",
-    padding: "20px",
-    borderRadius: "12px",
-    boxShadow: "rgba(0,0,0,0.08) 0px 2px 8px",
-  };
+    fetchProfile();
+  }, []);
 
-  const textLine = {
-    fontSize: "16px",
-    margin: "6px 0",
-    color: "#222",
-    display: "flex",
-    gap: "8px",
-  };
-
-  const title = {
-    fontSize: "18px",
-    fontWeight: 700,
-    marginBottom: "15px",
-  };
+  if (loading) return <Spinner animation="border" className="d-block mx-auto mt-5" />;
+  if (error) return <Alert variant="danger">{error}</Alert>;
 
   return (
-    <div
-      style={{
-        paddingTop: "20px",
-        display: "flex",
-        justifyContent: "center", // ✅ CONTENT CENTER HO JAYEGA
-      }}
-    >
-      <div style={{ width: "100%", maxWidth: "600px" }}> {/* ✅ PERFECT CENTER CONTAINER */}
-        
-        {/* TOP PROFILE */}
-        <div style={card}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
-              <div style={textLine}>
-                <b>Name:</b> <span>{user.fullName}</span>
-              </div>
-              <div style={textLine}>
-                <b>Client Id:</b> <span>{user.clientId}</span>
-              </div>
-            </div>
+    <Container className="py-4">
+      {/* 🔷 Profile Section */}
+      <Card className="shadow-sm mb-4">
+        <Card.Body>
+     <Row className="justify-content-center text-center align-items-center" style={{ minHeight: "150px" }}>
+  <Col md={8}>
+    <p className="mb-2 fw-bold fs-5">
+      Name: <span className="fw-normal">{profile.fullName}</span>
+    </p>
+    <p className="mb-0 fw-bold fs-6">
+      Client ID: <span className="fw-normal">{profile._id}</span>
+    </p>
+  </Col>
+</Row>
 
-            <div style={{ textAlign: "center" }}>
-              <img
-                src={user.profilePic}
-                alt="avatar"
-                width="95"
-                height="95"
-                style={{ borderRadius: "50%", marginBottom: "10px" }}
-              />
-              <br />
-            </div>
-          </div>
-        </div>
+        </Card.Body>
+      </Card>
 
-        {/* PERSONAL DETAILS */}
-        <div style={card}>
-          <p style={title}>Personal Details</p>
+      {/* 🔷 Personal Details */}
+      <Card className="shadow-sm mb-4">
+        <Card.Body>
+          <h5 className="fw-bold mb-3">Personal Details</h5>
+          <Row>
+            <Col md={6}>
+              <p><strong>Email:</strong> {profile.email}</p>
+              <p><strong>Phone:</strong> {profile.mobileNumber}</p>
+              <p><strong>Aadhar No.:</strong> {profile.aadharNumber}</p>
+            </Col>
+            <Col md={6}>
+              <p><strong>PAN No.:</strong> {profile.panCardNumber}</p>
+              <p><strong>D.O.B.:</strong> {profile.dob}</p>
+              <p><strong>Total Amount:</strong> {profile.totalAmount}</p>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
 
-          <div style={textLine}><b>Email:</b> <span>{user.email}</span></div>
-          <div style={textLine}><b>Phone:</b> <span>{user.phone}</span></div>
-          <div style={textLine}><b>Aadhar No.:</b> <span>{user.aadhar}</span></div>
-          <div style={textLine}><b>PAN No.:</b> <span>{user.pan}</span></div>
-          <div style={textLine}><b>D.O.B.:</b> <span>{user.dob}</span></div>
-        </div>
+      {/* 🔷 Bank Details */}
+      <Card className="shadow-sm mb-4">
+        <Card.Body>
+          <h5 className="fw-bold mb-3">Bank Details</h5>
+          <Row>
+            <Col md={6}>
+              <p><strong>Bank Name:</strong> {profile.bankName}</p>
+              <p><strong>IFSC No.:</strong> {profile.ifscCode}</p>
+            </Col>
+            <Col md={6}>
+              <p><strong>Branch Name:</strong> {profile.bankBranchName}</p>
+              <p><strong>Account No.:</strong> {profile.accountNumber}</p>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
 
-        {/* BANK DETAILS */}
-        <div style={card}>
-          <p style={title}>Bank Details</p>
-
-          <div style={textLine}><b>Bank Name:</b> <span>{user.bankName}</span></div>
-          <div style={textLine}><b>IFSC No.:</b> <span>{user.ifsc}</span></div>
-          <div style={textLine}><b>Branch Name:</b> <span>{user.branch}</span></div>
-          <div style={textLine}><b>Account No.:</b> <span>{user.accountNo}</span></div>
-        </div>
-
-        {/* NOMINEE DETAILS */}
-        <div style={card}>
-          <p style={title}>Nominee Details</p>
-
-          <div style={textLine}><b>Nominee’s Name:</b> <span>{user.nomineeName}</span></div>
-          <div style={textLine}><b>Nominee’s Aadhar Card:</b> <span>{user.nomineeAadhar}</span></div>
-          <div style={textLine}><b>Nominee’s Relations:</b> <span>{user.nomineeRelation}</span></div>
-        </div>
-
-      </div>
-    </div>
+      {/* 🔷 Nominee Details */}
+      <Card className="shadow-sm">
+        <Card.Body>
+          <h5 className="fw-bold mb-3">Nominee Details</h5>
+          <Row>
+            <Col md={6}>
+              <p><strong>Nominee’s Name:</strong> {profile.nomineeName}</p>
+              <p><strong>Nominee’s Aadhar No.:</strong> {profile.nomineeAadhar}</p>
+            </Col>
+            <Col md={6}>
+              <p><strong>Nominee’s Relation:</strong> {profile.nomineeRelation}</p>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };
 
-export default Profile;
+export default UserProfile;

@@ -144,7 +144,7 @@ const RouterPage = () => {
     "/userDashboard",
     "/portfolio",
     "/dashboard",
-    "/userAccount",
+    "/UserAccount",
     "/profile",
     "/deposit",
     "/uploadfile",
@@ -158,7 +158,7 @@ const RouterPage = () => {
     "/userDashboard",
     "/portfolio",
     "/dashboard",
-    "/userAccount",
+    "/UserAccount",
     "/profile",
     "/deposit",
     "/uploadfile",
@@ -185,6 +185,7 @@ const RouterPage = () => {
         <Route path="/term-and-condition" element={<TermsAndCondition />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+          <Route path="/deposit" element={<DepositPage />} />
 
         {/* ✅ Protected Pages */}
         <Route element={<ProtectedRoute />}>

@@ -645,7 +645,7 @@ const UserDashboard = () => {
       <div className="container py-4 text-center">
         {/* 👋 Welcome Section */}
         <h3 className="fw-bold text-primary mb-3">
-          Hi {user?.name} 👋
+        Hi {user.fullName} 👋
         </h3>
 
         {/* 🔥 Slider Section */}
