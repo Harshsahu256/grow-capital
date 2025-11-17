@@ -5,7 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const BottomNavbar = () => {
   return (
     <nav
-      className="bg-light border-top shadow-sm  bottom-0 w-100"
+      className="bg-light border-top shadow-sm  position-fixed bottom-0 w-100"
       style={{ zIndex: 1000  , }}
     >
       <div

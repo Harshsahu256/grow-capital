@@ -317,7 +317,11 @@ const UserAccount = () => {
   };
 
   return (
-    <>
+   
+
+    <div style={{ paddingBottom: "70px" }}> 
+  
+   <>
       <div className="container py-3" style={{ backgroundColor: "#f7f8fc", minHeight: "100vh" }}>
 
         {/* ✅ LEFT ALIGNED MAIN HEADING */}
@@ -525,6 +529,8 @@ const UserAccount = () => {
         />
       )}
     </>
+</div>
+
   );
 };
 
