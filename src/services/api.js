@@ -41,6 +41,11 @@ export const API_ROOT = "http://localhost:5000/api";
 // 🔴 Centralized API Endpoints
 export const API_ENDPOINT = {
   // --- User Authentication & Profile ---
+
+// --- Public / Contact ---
+  GET_CONTACT: `${API_ROOT}/admin/contact`,
+
+
   USER_REGISTER: `${API_ROOT}/auth/register`,
   USER_LOGIN: `${API_ROOT}/auth/login`,
   USER_PROFILE: `${API_ROOT}/auth/profile`, // User's own profile

@@ -132,165 +132,249 @@
 
 // export default Footer;
 
-import React from "react";
+// import React from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import { Container, Row, Col } from "react-bootstrap";
+// import { FaFacebookF, FaInstagram } from "react-icons/fa";
+// import Logo from '../assets/navbar.png'
+
+
+
+// const Footer = () => {
+//   return (
+//     <footer
+//       style={{
+//         backgroundColor: "#1b1f24",
+//         color: "#ccc",
+//         fontSize: "15px",
+//         lineHeight: "1.7",
+//       }}
+//     >
+//       <Container className="py-5">
+//         <Row className="gy-4 align-items-start text-center text-md-start">
+//           {/* 🔹 Left Section */}
+//         {/* 🔹 Left Section */}
+// <Col md={4}>
+//   <div
+//     className="d-flex justify-content-center justify-content-md-start"
+//     style={{
+//       position: "relative",
+//       top: "-25px", // 👈 logo ko top par uthane ke liye
+//     }}
+//   >
+//     <img
+//       src={Logo}
+//       alt="STOCK MARKET INVESTING BY GROW CAPITAL"
+//       style={{
+//         width: "250px", // 👈 size chhota kar diya (150 → 110)
+//         height: "auto",
+//       }}
+//     />
+//   </div>
+//   <p
+//     className="px-md-0 px-3 mt-2"
+//     style={{ fontSize: "14px", lineHeight: "1.6", color: "#ccc" }}
+//   >
+//     Stock Market Investing by Grow Capital is a financial advisory firm offering expert recommendations
+//     on stock cash and F&O segments listed on NSE and BSE, along with
+//     commodities such as bullion, metals, and agro-products traded on MCX and NCDEX.
+//   </p>
+// </Col>
+
+//           {/* 🔹 Middle Section */}
+//           <Col md={4}>
+//             <h6 className="text-light mb-3 fw-semibold">Useful Links</h6>
+//             <ul
+//               style={{
+//                 listStyle: "none",
+//                 padding: 0,
+//                 margin: 0,
+//                 lineHeight: "2",
+//               }}
+//             >
+//               {["Home", "Services", "Money Control", "Economic Times", "Terms & Conditions"].map(
+//                 (item, i) => (
+//                   <li key={i}>
+//                     <a
+//                       href="#"
+//                       style={{
+//                         color: "#9aa0a6",
+//                         textDecoration: "none",
+//                         transition: "0.3s",
+//                       }}
+//                       onMouseOver={(e) =>
+//                         (e.target.style.color = "#0d6efd")
+//                       }
+//                       onMouseOut={(e) =>
+//                         (e.target.style.color = "#9aa0a6")
+//                       }
+//                     >
+//                       {item}
+//                     </a>
+//                   </li>
+//                 )
+//               )}
+//             </ul>
+//           </Col>
+
+//           {/* 🔹 Right Section */}
+//           <Col md={4}>
+//             <h6 className="text-light mb-3 fw-semibold">Contact Details</h6>
+//             <p className="mb-2">Amarnagar faridabad haryana - 121003</p>
+//             <p className="mb-1">
+//               <strong>Phone:</strong>{" "}
+//               <a
+//                 href="tel:8962315503"
+//                 style={{
+//                   color: "#9aa0a6",
+//                   textDecoration: "none",
+//                 }}
+//               >
+//             8982261363
+//               </a>
+//             </p>
+//             <p>
+//               <strong>Email:</strong>{" "}
+//               <a
+//                 href="mailto:Info@smigc.in"
+//                 style={{
+//                   color: "#9aa0a6",
+//                   textDecoration: "none",
+//                 }}
+//               >
+//              Info@smigc.in
+//               </a>
+//             </p>
+
+//             {/* Social Icons */}
+//             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+//               <a
+//                 href="#"
+//                 style={{
+//                   color: "#9aa0a6",
+//                   fontSize: "25px",
+//                   textDecoration: "none",
+//                   transition: "0.3s",
+//                 }}
+//                 onMouseOver={(e) => (e.target.style.color = "#0d6efd")}
+//                 onMouseOut={(e) => (e.target.style.color = "#9aa0a6")}
+//               >
+//                 <FaFacebookF />
+//               </a>
+//               <a
+//                 href="#"
+//                 style={{
+//                   color: "#9aa0a6",
+//                   fontSize: "25px",
+//                   textDecoration: "none",
+//                   transition: "0.3s",
+//                 }}
+//                 onMouseOver={(e) => (e.target.style.color = "#d63384")}
+//                 onMouseOut={(e) => (e.target.style.color = "#9aa0a6")}
+//               >
+//                 <FaInstagram />
+//               </a>
+//             </div>
+//           </Col>
+//         </Row>
+//       </Container>
+
+//       {/* 🔹 Bottom Bar */}
+//       <div
+//         style={{
+//           backgroundColor: "#000",
+//           color: "#ccc",
+//           textAlign: "center",
+//           padding: "12px 0",
+//           fontSize: "14px",
+//           borderTop: "1px solid #222",
+//         }}
+//       >
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
+
+
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import Logo from '../assets/navbar.png'
-
-
+import Logo from '../assets/navbar.png';
+import { getContactDetails } from "../services/apiService";
 
 const Footer = () => {
+  const [contact, setContact] = useState({
+    address: "",
+    phone: "",
+    email: ""
+  });
+
+  useEffect(() => {
+    const fetchContact = async () => {
+      const data = await getContactDetails();
+      setContact(data);
+    };
+    fetchContact();
+  }, []);
+
   return (
-    <footer
-      style={{
-        backgroundColor: "#1b1f24",
-        color: "#ccc",
-        fontSize: "15px",
-        lineHeight: "1.7",
-      }}
-    >
+    <footer style={{ backgroundColor: "#1b1f24", color: "#ccc", fontSize: "15px", lineHeight: "1.7" }}>
       <Container className="py-5">
         <Row className="gy-4 align-items-start text-center text-md-start">
-          {/* 🔹 Left Section */}
-        {/* 🔹 Left Section */}
-<Col md={4}>
-  <div
-    className="d-flex justify-content-center justify-content-md-start"
-    style={{
-      position: "relative",
-      top: "-25px", // 👈 logo ko top par uthane ke liye
-    }}
-  >
-    <img
-      src={Logo}
-      alt="STOCK MARKET INVESTING BY GROW CAPITAL"
-      style={{
-        width: "250px", // 👈 size chhota kar diya (150 → 110)
-        height: "auto",
-      }}
-    />
-  </div>
-  <p
-    className="px-md-0 px-3 mt-2"
-    style={{ fontSize: "14px", lineHeight: "1.6", color: "#ccc" }}
-  >
-    Stock Market Investing by Grow Capital is a financial advisory firm offering expert recommendations
-    on stock cash and F&O segments listed on NSE and BSE, along with
-    commodities such as bullion, metals, and agro-products traded on MCX and NCDEX.
-  </p>
-</Col>
+          {/* Left Section */}
+          <Col md={4}>
+            <div className="d-flex justify-content-center justify-content-md-start" style={{ position: "relative", top: "-25px" }}>
+              <img src={Logo} alt="STOCK MARKET INVESTING BY GROW CAPITAL" style={{ width: "250px", height: "auto" }} />
+            </div>
+            <p className="px-md-0 px-3 mt-2" style={{ fontSize: "14px", lineHeight: "1.6", color: "#ccc" }}>
+              Stock Market Investing by Grow Capital is a financial advisory firm offering expert recommendations on stock cash and F&O segments listed on NSE and BSE, along with commodities such as bullion, metals, and agro-products traded on MCX and NCDEX.
+            </p>
+          </Col>
 
-          {/* 🔹 Middle Section */}
+          {/* Middle Section */}
           <Col md={4}>
             <h6 className="text-light mb-3 fw-semibold">Useful Links</h6>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                lineHeight: "2",
-              }}
-            >
-              {["Home", "Services", "Money Control", "Economic Times", "Terms & Conditions"].map(
-                (item, i) => (
-                  <li key={i}>
-                    <a
-                      href="#"
-                      style={{
-                        color: "#9aa0a6",
-                        textDecoration: "none",
-                        transition: "0.3s",
-                      }}
-                      onMouseOver={(e) =>
-                        (e.target.style.color = "#0d6efd")
-                      }
-                      onMouseOut={(e) =>
-                        (e.target.style.color = "#9aa0a6")
-                      }
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: "2" }}>
+              {["Home", "Services", "Money Control", "Economic Times", "Terms & Conditions"].map((item, i) => (
+                <li key={i}>
+                  <a href="#" style={{ color: "#9aa0a6", textDecoration: "none" }}
+                     onMouseOver={(e) => (e.target.style.color = "#0d6efd")}
+                     onMouseOut={(e) => (e.target.style.color = "#9aa0a6")}>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </Col>
 
-          {/* 🔹 Right Section */}
+          {/* Right Section */}
           <Col md={4}>
             <h6 className="text-light mb-3 fw-semibold">Contact Details</h6>
-            <p className="mb-2">Amarnagar faridabad haryana - 121003</p>
+            <p className="mb-2">{contact.address}</p>
             <p className="mb-1">
               <strong>Phone:</strong>{" "}
-              <a
-                href="tel:8962315503"
-                style={{
-                  color: "#9aa0a6",
-                  textDecoration: "none",
-                }}
-              >
-            8982261363
+              <a href={`tel:${contact.phone}`} style={{ color: "#9aa0a6", textDecoration: "none" }}>
+                {contact.phone}
               </a>
             </p>
             <p>
               <strong>Email:</strong>{" "}
-              <a
-                href="mailto:Info@smigc.in"
-                style={{
-                  color: "#9aa0a6",
-                  textDecoration: "none",
-                }}
-              >
-             Info@smigc.in
+              <a href={`mailto:${contact.email}`} style={{ color: "#9aa0a6", textDecoration: "none" }}>
+                {contact.email}
               </a>
             </p>
-
-            {/* Social Icons */}
             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
-              <a
-                href="#"
-                style={{
-                  color: "#9aa0a6",
-                  fontSize: "25px",
-                  textDecoration: "none",
-                  transition: "0.3s",
-                }}
-                onMouseOver={(e) => (e.target.style.color = "#0d6efd")}
-                onMouseOut={(e) => (e.target.style.color = "#9aa0a6")}
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="#"
-                style={{
-                  color: "#9aa0a6",
-                  fontSize: "25px",
-                  textDecoration: "none",
-                  transition: "0.3s",
-                }}
-                onMouseOver={(e) => (e.target.style.color = "#d63384")}
-                onMouseOut={(e) => (e.target.style.color = "#9aa0a6")}
-              >
-                <FaInstagram />
-              </a>
+              <a href="#" style={{ color: "#9aa0a6", fontSize: "25px" }}><FaFacebookF /></a>
+              <a href="#" style={{ color: "#9aa0a6", fontSize: "25px" }}><FaInstagram /></a>
             </div>
           </Col>
         </Row>
       </Container>
 
-      {/* 🔹 Bottom Bar */}
-      <div
-        style={{
-          backgroundColor: "#000",
-          color: "#ccc",
-          textAlign: "center",
-          padding: "12px 0",
-          fontSize: "14px",
-          borderTop: "1px solid #222",
-        }}
-      >
-      </div>
+      <div style={{ backgroundColor: "#000", color: "#ccc", textAlign: "center", padding: "12px 0", fontSize: "14px", borderTop: "1px solid #222" }}></div>
     </footer>
   );
 };

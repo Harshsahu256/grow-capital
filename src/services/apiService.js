@@ -409,3 +409,14 @@ export const sendContactMessage = async (data) => {
     throw error;
   }
 };
+
+// 🔹 Get Contact Details (public)
+export const getContactDetails = async () => {
+  try {
+    const response = await axios.get(API_ENDPOINT.GET_CONTACT);
+    return response.data; // Returns { address, phone, email }
+  } catch (error) {
+    console.error("Error fetching contact details:", error.response?.data || error.message);
+    throw error;
+  }
+};

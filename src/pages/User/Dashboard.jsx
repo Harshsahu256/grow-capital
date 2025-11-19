@@ -92,7 +92,7 @@ const Dashboard = () => {
         }}
       >
         <h4 className="fw-bold mb-4" style={{ textAlign: 'start' }}>
-          Hi {user.fullName} 👋
+          Hi {user.name} 👋
         </h4>
 
         {/* Market Today */}
