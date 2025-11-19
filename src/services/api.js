@@ -62,18 +62,26 @@ export const API_ENDPOINT = {
   CREATE_WITHDRAW: `${API_ROOT}/auth/create`, // User creates withdraw request
   SUBMIT_MESSAGE: `${API_ROOT}/auth/submit`, // User sends contact message
 
-  // --- Admin Specific Endpoints ---
-  ADMIN_LOGIN: `${API_ROOT}/admin/login`, // Admin login
-  ADMIN_GET_PENDING_USERS: `${API_ROOT}/admin/pending-users`, // Get users awaiting approval
-  ADMIN_APPROVE_USER: `${API_ROOT}/admin/approve-user`, // Approve a user
-  ADMIN_REJECT_USER: `${API_ROOT}/admin/reject-user`, // Reject a user
 
-  // You can add more admin endpoints here if needed
-  ADMIN_GET_ALL_USERS: `${API_ROOT}/admin/users`, // Example: Get all users (approved, pending, rejected)
-  ADMIN_GET_ALL_ACCOUNTS: `${API_ROOT}/admin/getAllAccounts`, // Example: Get all bank accounts (admin view)
-  ADMIN_UPDATE_ACCOUNT: `${API_ROOT}/admin/getAllAccounts`, // Example: Update bank account (admin view)
-  ADMIN_DELETE_ACCOUNT: `${API_ROOT}/admin/deleteAccount`, // Example: Delete bank account (admin view)
-  ADMIN_GET_ALL_WITHDRAW_REQUESTS: `${API_ROOT}/admin/getAllWithdrawRequests`, // Example: Get all withdraw requests
-  ADMIN_UPDATE_WITHDRAW_REQUEST_STATUS: `${API_ROOT}/admin/update`, // Example: Update withdraw request status
-  ADMIN_GET_ALL_MESSAGES: `${API_ROOT}/admin/messages`, // Example: Get all contact messages
+  
+  // // --- Admin Specific Endpoints ---
+  // ADMIN_LOGIN: `${API_ROOT}/admin/login`, // Admin login
+  // ADMIN_GET_PENDING_USERS: `${API_ROOT}/admin/pending-users`, // Get users awaiting approval
+  // ADMIN_APPROVE_USER: `${API_ROOT}/admin/approve-user`, // Approve a user
+  // ADMIN_REJECT_USER: `${API_ROOT}/admin/reject-user`, // Reject a user
+
+  // // You can add more admin endpoints here if needed
+  // ADMIN_GET_ALL_USERS: `${API_ROOT}/admin/users`, // Example: Get all users (approved, pending, rejected)
+  // ADMIN_GET_ALL_ACCOUNTS: `${API_ROOT}/admin/getAllAccounts`, // Example: Get all bank accounts (admin view)
+  // ADMIN_UPDATE_ACCOUNT: `${API_ROOT}/admin/getAllAccounts`, // Example: Update bank account (admin view)
+  // ADMIN_DELETE_ACCOUNT: `${API_ROOT}/admin/deleteAccount`, // Example: Delete bank account (admin view)
+  // ADMIN_GET_ALL_WITHDRAW_REQUESTS: `${API_ROOT}/admin/getAllWithdrawRequests`, // Example: Get all withdraw requests
+  // ADMIN_UPDATE_WITHDRAW_REQUEST_STATUS: `${API_ROOT}/admin/update`, // Example: Update withdraw request status
+  // ADMIN_GET_ALL_MESSAGES: `${API_ROOT}/admin/messages`, // Example: Get all contact messages
+
+
+ 
+
+
+
 };
